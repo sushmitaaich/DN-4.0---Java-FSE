@@ -1,9 +1,9 @@
 -- Exercise 1: Control Structures
 
--- Scenario 1: Apply 1% discount to interest rates for customers above 60
+-- Scenario 1: Apply 1% discount to interest rates for Customers1 above 60
 
 BEGIN
-  FOR rec IN (SELECT * FROM Customers c JOIN Loans l ON c.CustomerID = l.CustomerID) LOOP
+  FOR rec IN (SELECT * FROM Customers1 c JOIN Loans l ON c.CustomerID = l.CustomerID) LOOP
     IF MONTHS_BETWEEN(SYSDATE, rec.DOB)/12 > 60 THEN
       UPDATE Loans SET InterestRate = InterestRate - 1
       WHERE LoanID = rec.LoanID;
@@ -29,7 +29,7 @@ END;
 -- Scenario 3: Add new customer safely
 CREATE OR REPLACE PROCEDURE AddNewCustomer(p_id NUMBER, p_name VARCHAR2, p_dob DATE, p_balance NUMBER) IS
 BEGIN
-  INSERT INTO Customers(CustomerID, Name, DOB, Balance, LastModified) 
+  INSERT INTO Customers1(CustomerID, Name, DOB, Balance, LastModified) 
   VALUES (p_id, p_name, p_dob, p_balance, SYSDATE);
 EXCEPTION
   WHEN DUP_VAL_ON_INDEX THEN
