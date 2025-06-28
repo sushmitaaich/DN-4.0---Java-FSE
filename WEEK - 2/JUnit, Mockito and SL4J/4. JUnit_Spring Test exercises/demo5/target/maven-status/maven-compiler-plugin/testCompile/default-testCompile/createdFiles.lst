@@ -1,0 +1,9 @@
+com\example\ExceptionHandlerTest.class
+com\example\PostUserTest.class
+com\example\UserServiceTest.class
+com\example\CalculatorServiceTest.class
+com\example\ParameterizedTestExample.class
+com\example\ServiceExceptionTest.class
+com\example\UserControllerTest.class
+com\example\IntegrationTest.class
+com\example\CustomQueryTest.class
